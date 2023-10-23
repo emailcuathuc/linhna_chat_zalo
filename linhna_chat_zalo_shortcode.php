@@ -1,9 +1,10 @@
 <?php
 /*
 Plugin Name: Linhna Chat Zalo
-Description: Plugin mô tả
-Version: 1.1
-Author: Linhna
+Description: Plugin dùng để tạo nút chat Zalo và một số tính năng đi kèm
+Version: 1.0
+Author: Thức Nguyễn
+Author URI: https://www.thucblog.com
 GitHub Plugin URI: https://github.com/emailcuathuc/linhna_chat_zalo
 */
 
