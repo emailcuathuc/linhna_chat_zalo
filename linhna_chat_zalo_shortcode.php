@@ -4,6 +4,7 @@ Plugin Name: Linhna Chat Zalo
 Description: Plugin mô tả
 Version: 1.1
 Author: Linhna
+GitHub Plugin URI: https://github.com/emailcuathuc/linhna_chat_zalo
 */
 
 // Load CSS and JS
