@@ -14,7 +14,7 @@ function github_plugin_update($transient) {
     $remote_version = '2.1'; // Phiên bản mới nhất trên GitHub
 
     if (version_compare($transient->checked[$plugin_slug], $remote_version, '<')) {
-        $package = 'https://github.com/emailcuathuc/linhna_chat_zalo/archive/master.zip';
+        $package = 'https://github.com/emailcuathuc/linhna_chat_zalo/archive/refs/heads/main.zip';
         $obj = new stdClass();
         $obj->slug = $plugin_slug;
         $obj->new_version = $remote_version;
