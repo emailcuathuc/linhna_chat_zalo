@@ -2,7 +2,7 @@
 /*
 Plugin Name: Linhna Chat Zalo
 Description: Plugin mô tả
-Version: 1.0
+Version: 1.1
 Author: Linhna
 */
 function check_for_plugin_update($checked_data) {
