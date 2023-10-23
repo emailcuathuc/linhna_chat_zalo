@@ -5,27 +5,28 @@ Description: Plugin mô tả
 Version: 1.1
 Author: Linhna
 */
-function check_for_plugin_update($checked_data) {
-    global $wp_version;
-
-    $plugin_slug = 'linhna_chat_zalo'; // Thay thế bằng slug của plugin của bạn
-    $plugin_path = plugin_basename(__FILE__);
-    $remote_version = '1.1'; // Thay thế bằng phiên bản mới nhất của plugin trên GitHub
-    $plugin_data = get_plugin_data(WP_PLUGIN_DIR . '/' . $plugin_path);
-
-    if (version_compare($wp_version, $remote_version, '<') && version_compare($plugin_data['Version'], $remote_version, '<')) {
-        $checked_data->response[$plugin_path] = array(
-            'new_version' => $remote_version,
-            'slug' => $plugin_slug,
-            'url' => 'https://github.com/emailcuathuc/linhna_chat_zalo/', // Thay thế bằng URL của repository của bạn
-            'package' => 'https://github.com/emailcuathuc/linhna_chat_zalo/archive/refs/heads/main.zip' // Thay thế bằng URL trực tiếp đến tệp ZIP của plugin
-        );
+function github_plugin_update($transient) {
+    if (empty($transient->checked)) {
+        return $transient;
     }
 
-    return $checked_data;
+    $plugin_slug = plugin_basename(__FILE__);
+    $remote_version = '1.1'; // Phiên bản mới nhất trên GitHub
+
+    if (version_compare($transient->checked[$plugin_slug], $remote_version, '<')) {
+        $package = 'https://github.com/emailcuathuc/linhna_chat_zalo/archive/master.zip';
+        $obj = new stdClass();
+        $obj->slug = $plugin_slug;
+        $obj->new_version = $remote_version;
+        $obj->url = 'https://github.com/emailcuathuc/linhna_chat_zalo';
+        $obj->package = $package;
+        $transient->response[$plugin_slug] = $obj;
+    }
+
+    return $transient;
 }
 
-add_filter('site_transient_update_plugins', 'check_for_plugin_update');
+add_filter('pre_set_site_transient_update_plugins', 'github_plugin_update');
 
 // Load CSS and JS
 function linhna_chat_zalo_enqueue_scripts() {
