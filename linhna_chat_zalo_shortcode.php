@@ -11,7 +11,7 @@ function github_plugin_update($transient) {
     }
 
     $plugin_slug = plugin_basename(__FILE__);
-    $remote_version = '1.1'; // Phiên bản mới nhất trên GitHub
+    $remote_version = '2.1'; // Phiên bản mới nhất trên GitHub
 
     if (version_compare($transient->checked[$plugin_slug], $remote_version, '<')) {
         $package = 'https://github.com/emailcuathuc/linhna_chat_zalo/archive/master.zip';
