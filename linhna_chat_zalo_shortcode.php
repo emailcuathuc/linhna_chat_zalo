@@ -2,31 +2,9 @@
 /*
 Plugin Name: Linhna Chat Zalo
 Description: Plugin mô tả
-Version: 1.1
+Version: 1.0
 Author: Linhna
 */
-function github_plugin_update($transient) {
-    if (empty($transient->checked)) {
-        return $transient;
-    }
-
-    $plugin_slug = plugin_basename(__FILE__);
-    $remote_version = '2.1'; // Phiên bản mới nhất trên GitHub
-
-    if (version_compare($transient->checked[$plugin_slug], $remote_version, '<')) {
-        $package = 'https://github.com/emailcuathuc/linhna_chat_zalo/archive/refs/heads/main.zip';
-        $obj = new stdClass();
-        $obj->slug = $plugin_slug;
-        $obj->new_version = $remote_version;
-        $obj->url = 'https://github.com/emailcuathuc/linhna_chat_zalo';
-        $obj->package = $package;
-        $transient->response[$plugin_slug] = $obj;
-    }
-
-    return $transient;
-}
-
-add_filter('pre_set_site_transient_update_plugins', 'github_plugin_update');
 
 // Load CSS and JS
 function linhna_chat_zalo_enqueue_scripts() {
