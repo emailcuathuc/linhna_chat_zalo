@@ -1,0 +1,55 @@
+.linhna-tooltip {
+    display: none;
+    position: fixed;
+    bottom: 71px;
+    right: 85px;
+    width: 300px;
+    font-size: 14px;
+    color: black;
+    font-weight: 600;
+    background-color: #fff;
+    border-top: 3px solid #218ceb;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 9999;
+}
+
+.linhna-tooltip.active {
+    display: block;
+}
+
+.linhna-close-btn {
+    cursor: pointer;
+    font-size: 10px;
+    position: fixed;
+    right: 75px;
+    bottom: 144px;
+    z-index: 10000;
+    background-color: #5e5e5e;
+    color: white;
+    border-radius: 100px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.linhna-tooltip-phone {
+    font-size: 11px;
+    font-family: sans-serif;
+    font-weight: 100;
+    color: #898989;
+    border-top: 1px dashed #e7e7e7;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+}
+.live-svg {
+    width: 30px;
+    margin: unset !important;
+}
+.tu-van {
+    margin-left: 5px;
+    margin-top: 5px;
+}
